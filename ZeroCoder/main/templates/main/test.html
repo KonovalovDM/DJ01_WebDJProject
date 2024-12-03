@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Результаты тестов</title>
-</head>
-<body>
+{% extends 'main/layoute.html' %}
 
- <nav>
-        <a href="/">Главная</a> |
-        <a href="/new">Новая страница</a> |
-        <a href="/data">Данные</a> |
-        <a href="/test">Тест</a>
-    </nav>
+{% block title %}
+
+    <title>Результаты тестов</title>
+
+{% endblock %}
+{% block content %}
+
+  {% include 'main/nav.html' %}
+
     <h1>А эта страница организована для вывода результатов тестирования проекта.</h1>
     <img src="https://via.placeholder.com/800x400?text=Тест" alt="Тест">
 
-</body>
-</html>
+{% endblock %}

@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Главная страница моего первого сайта на Django</title>
-</head>
-<body>
+{% extends 'main/layoute.html' %}
 
-     <nav>
-            <a href="/">Главная</a> |
-            <a href="/new">Новая страница</a> |
-            <a href="/data">Данные</a> |
-            <a href="/test">Тест</a>
-        </nav>
-        <h1>Это действительно мой первый проект на Django!!!</h1>
+{% block title %}
+    <title>Главная страница моего второго сайта на Django</title>
+{% endblock %}
+
+{% block content %}
+    {% include 'main/nav.html' %}
+
+        <h1>Это уже второй мой проект на Django!!!</h1>
         <img src="https://via.placeholder.com/800x400?text=Главная+страница" alt="Главная">
-
-</body>
-</html>
+{% endblock %}
