@@ -9,6 +9,8 @@
 {% block content %}
 
     <h1>А эта страница организована для вывода результатов тестирования проекта.</h1>
-    <img src="https://via.placeholder.com/800x400?text=Тест" alt="Тест">
+        {% load static %}
+        <img src="{% static 'main/img/test.jpg' %}" alt="Тест"
+        class="responnsive-img">
 
 {% endblock %}

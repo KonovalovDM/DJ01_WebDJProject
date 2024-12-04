@@ -2,13 +2,15 @@
 
 {% block title %}
 
-    <title>Главная страница моего второго сайта на Django</title>
+    <title>Главная страница</title>
 
 {% endblock %}
 
 {% block content %}
 
-        <h1>Это уже второй мой проект на Django!!!</h1>
-        <img src="https://via.placeholder.com/800x400?text=Главная+страница" alt="Главная">
+        <h1>Главная страница моего сайта на Django<br>Это уже второй мой проект на Django!!!</h1>
+        {% load static %}
+        <img src="{% static 'main/img/main.jpg' %}" alt="Главная"
+        class="responnsive-img">
 
 {% endblock %}
