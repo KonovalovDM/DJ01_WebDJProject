@@ -1,35 +1,40 @@
-{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
+  {% load static %}
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}">
-
-  {% block title %}
-
-  <title>Title</title>
-
-  {% endblock %}
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+  <title>{% block title %}{{ block.super }}{% endblock %}</title>
 </head>
-
 <body>
+  <div class="d-flex flex-column min-vh-100">
+    <div class="d-flex flex-grow-1">
+      <!-- Меню слева -->
+      <nav class="menu flex-shrink-0 p-3 bg-light" style="width: 250px; height: 100vh;">
+        {% include 'main/nav.html' %}
+      </nav>
 
-    {% include 'main/nav.html' %}
+      <!-- Основной контент -->
+      <div class="flex-grow-1">
+        <!-- Логотип в правом верхнем углу -->
+        <div class="d-flex justify-content-end p-2">
+          <img src="{% static 'main/img/logo.jpg' %}" alt="Логотип" class="logo">
+        </div>
 
-    <aside>
+        <!-- Центрированный контент -->
+        <main class="container text-center">
+          {% block content %}
+          {% endblock %}
+        </main>
+      </div>
+    </div>
 
-    </aside>
-    <main>
-
-    {% block content %}
-
-
-    {% endblock %}
-
-    </main>
+    <!-- Центрированный футер -->
+    <footer class="bg-dark text-white py-4">
+      {% include 'main/footer.html' %}
+    </footer>
+  </div>
 </body>
 </html>

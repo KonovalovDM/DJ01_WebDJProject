@@ -1,16 +1,21 @@
 {% extends 'main/layoute.html' %}
 
+{% load static %} <!-- Загрузка тега static -->
+
 {% block title %}
-
-    <title>Главная страница</title>
-
+<title>Главная страница</title>
 {% endblock %}
 
 {% block content %}
-
-        <h1>Главная страница моего сайта на Django<br>Это уже второй мой проект на Django!!!</h1>
-        {% load static %}
-        <img src="{% static 'main/img/main.jpg' %}" alt="Главная"
-        class="responnsive-img">
-
+<div class="text-center">
+    <h1>Добро пожаловать на мой сайт Django!</h1>
+    <p class="lead">Этот проект создан для демонстрации возможностей Django и Bootstrap.</p>
+    <p>На сайте представлены:</p>
+    <ul class="list-unstyled">
+        <li>- Главная страница с описанием проекта.</li>
+        <li>- Страницы для демонстрации различных данных.</li>
+        <li>- Примеры маршрутизации и использования шаблонов.</li>
+    </ul>
+    <img src="{% static 'main/img/main.jpg' %}" alt="Главная" class="img-fluid rounded shadow mt-4">
+</div>
 {% endblock %}
